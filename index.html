@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💥 Ng-Duy-SPAM SMS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('https://images8.alphacoders.com/132/1325977.jpeg');
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+            cursor: url('https://images8.alphacoders.com/132/1325977.jpeg'), auto;
+        }
+        .container {
+            background: linear-gradient(135deg, #00aaff, #ff66cc);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(37, 35, 35, 0.1);
+            width: 300px;
+            position: relative;
+            z-index: 1;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .container.dark-mode {
+            background: linear-gradient(135deg, #003366, #990099);
+            color: #fff;
+        }
+        .container:before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            width: calc(100% + 10px);
+            height: calc(100% + 10px);
+            border-radius: 8px;
+            background: linear-gradient(45deg, #FF00FF, #00FFFF, #FF0000, #00FF00, #0000FF, #FFFF00);
+            background-size: 600% 600%;
+            animation: gradientAnimation 5s ease infinite;
+            z-index: -1;
+            filter: blur(5px);
+        }
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+        .header-text {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            z-index: 1;
+            border: 2px solid #00f;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .header-text span {
+            display: block;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #fff;
+            font-size: 16px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #FF69B4;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        button:hover {
+            background-color: #FF1493;
+        }
+        #response {
+            margin-top: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #FF1493;
+        }
+        .rainbow-text {
+            background: linear-gradient(45deg, #ffffff, #00f);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: bold;
+            font-size: 24px;
+        }
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            border-radius: 50%;
+            opacity: 0.8;
+            pointer-events: none;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-100px); }
+            100% { transform: translateY(100vh); }
+        }
+        .snowflake {
+            animation: fall linear infinite;
+            animation-duration: 5s;
+            animation-delay: calc(-1s * var(--i));
+        }
+        .toggle-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            font-size: 20px;
+            color: #000;
+            text-align: center;
+            line-height: 40px;
+            z-index: 1;
+        }
+        .led-border {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: calc(100% + 20px);
+            height: calc(100% + 20px);
+            border-radius: 8px;
+            border: 4px solid transparent;
+            box-shadow: 0 0 15px rgba(74, 204, 22, 0.603);
+            animation: ledBlink 0.5s infinite alternate;
+            z-index: -1;
+        }
+        @keyframes ledBlink {
+            0% { box-shadow: 0 0 15px rgba(255, 0, 0, 0.9); }
+            100% { box-shadow: 0 0 25px rgba(255, 0, 0, 1); }
+        }
+
+        .music-controls {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-text">
+        <span>Ng-Duy-SPAM SMS + CALL</span><br>
+        <span>Code by: Ng-Duy. Copyright 2024</span>
+    </div>
+    <div class="container">
+        <h1 class="rainbow-text">Ng-Duy-SMS</h1>
+        <div class="form-group">
+            <label for="phone" class="rainbow-text">Phone Number</label>
+            <input type="text" id="phone" placeholder="Enter Phone Number">
+        </div>
+        <div class="form-group">
+            <label for="count" class="rainbow-text">Spam Time</label>
+            <input type="number" id="count" placeholder="Enter Time" min="30" max="200">
+        </div>
+        <button id="submit-btn">🚀 Tiến Hành Spam 🚀</button>
+        <div id="response"></div>
+        <div class="toggle-button" id="toggle-theme">☀️</div>
+        <div class="led-border"></div>
+    </div>
+    <audio id="background-music" src="audio.mp3" autoplay loop></audio>
+    
+    <script>
+        function disableDevTools() {
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I') || (e.ctrlKey && e.key === 'U')) {
+                    e.preventDefault();
+                    alert('Ấy bạn . Sao lại làm vậy . công sức tôi đó !');
+                }
+            });
+        }
+        disableDevTools();
+
+        document.getElementById('submit-btn').addEventListener('click', async () => {
+            const phone = document.getElementById('phone').value;
+            const count = document.getElementById('count').value;
+            const responseDiv = document.getElementById('response');
+
+            if (!phone || !count) {
+                responseDiv.textContent = 'Vui Lòng Nhập Số Điện Thoại Và Số Lần Spam !.';
+                responseDiv.style.color = 'red';
+                return;
+            }
+
+            try {
+                const apiUrl = `http://20.11.40.20:9998/api/sms?key=sms&phone=${encodeURIComponent(phone)}&count=${encodeURIComponent(count)}&method=sms`;
+                const response = await fetch(apiUrl, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                });
+
+                if (response.ok) {
+                    responseDiv.textContent = `Tiến Hành Spam ${phone} Thời Gian ${count}`;
+                    responseDiv.style.color = 'green';
+                } else {
+                    responseDiv.textContent = `Tiến Hành Spam Không Thành Công ${phone}`;
+                    responseDiv.style.color = 'red';
+                }
+            } catch (error) {
+                responseDiv.textContent = 'Đã xảy ra lỗi khi gửi yêu cầu.';
+                responseDiv.style.color = 'red';
+            }
+        });
+
+        document.getElementById('toggle-theme').addEventListener('click', () => {
+            document.querySelector('.container').classList.toggle('dark-mode');
+            const toggleButton = document.getElementById('toggle-theme');
+            toggleButton.textContent = toggleButton.textContent === '☀️' ? '🌙' : '☀️';
+        });
+
+        function createSnowflakes() {
+            for (let i = 0; i < 50; i++) {
+                const snowflake = document.createElement('div');
+                snowflake.classList.add('snowflake');
+                snowflake.style.left = `${Math.random() * 100}vw`;
+                snowflake.style.animationDuration = `${Math.random() * 10 + 5}s`;
+                snowflake.style.animationDelay = `${Math.random() * 10}s`;
+                document.body.appendChild(snowflake);
+            }
+        }
+        createSnowflakes();
+    </script>
+</body>
+</html>
